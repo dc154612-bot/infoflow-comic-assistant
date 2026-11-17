@@ -50,4 +50,4 @@ python3 scripts/check_shots.py insert 替换镜头.md --original 原镜头.md
 
 校验器覆盖分镜字段与顺序、景别、编号、整数秒、段落结构和逐字音频比对。`storyboard` 可加 `--duration` 检查不足四十秒的正文，或用 `--group` 检查指定组。主动要求场景字段时加 `--scene`。用 `--help` 查看参数。运镜是否好拍、人物是否衔接、八套钩子视觉上是否不同这类判断，由技能按 [复验用例](tests/behavior-cases.md) 检查并由制作人员抽验。
 
-当前规则在《信息流助手》2026-11-12 单文件版基础上拆分，并按实际生产流程加入剧本拆解和开头差异检查。参考 [baoyu-skills](https://github.com/JimLiu/baoyu-skills) 的模块和按需引用结构。
+当前规则在《信息流助手》2026-11-12 单文件版基础上拆分，并按实际生产流程加入剧本拆解和开头差异检查。
