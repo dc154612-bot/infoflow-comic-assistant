@@ -6,12 +6,12 @@
 AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知索引维护流程 | R:code:SKILL.md | A:- | S:制作任务按当前入口选读资料，源码索引维护独立于单剧交接
 CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
 LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
-README.md[SU6T]: F:说明默认从剧本和配音时长交付人物提示词，并介绍四条制作技能、ChatGPT 项目部署和分镜校验 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目从导出的 Markdown 取规则，仓库变更后需要在项目设置里更新资料
-SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只提供剧本与配音时长时在内部拆解并直接交付人物提示词。点名角色时限定范围，明确索要拆解时才交付。续做默认只进入下一步
+README.md[SU6T]: F:说明默认从剧本交付人物提示词和可选配音时长，并介绍四条制作技能、ChatGPT 项目部署和分镜校验 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目从导出的 Markdown 取规则，仓库变更后需要在项目设置里更新资料
+SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只提供剧本时在内部拆解并直接交付双版人物提示词，配音时长可省略。项目和聊天标题不选择任务，续做只进入下一步
 
 ===/<repository>/scripts/===
 check_shots.py[TQ8S]: F:解析镜头文本，校验字段、时序、编号、景别和音频原文 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:正文不足三秒的分组允许一镜起步，仍须满足整数秒、连续时段和实际终点；只有提供音频原文才检查逐字保真
-export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:导出时将仓库文件链接换成项目资料名称，增删规则时同步维护文件名映射
+export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:项目指令直接声明只贴剧本时交付人物提示词，防止被项目名称分流。导出时把仓库链接换成项目资料名称
 
 ===/<repository>/shared/===
 shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频保真、镜头语言及口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:只有本轮明确要求场景时才在时间字段后追加；明确同时动作与说话的原文允许同镜
