@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-17T08:41:32Z",
-  "updated_at": "2026-11-17T08:50:43Z",
+  "updated_at": "2026-11-17T09:09:15Z",
   "files": {
     ".gitattributes": {
       "role": "index",
@@ -35,21 +35,21 @@
     },
     "README.md": {
       "role": "index",
-      "sha256": "88011f176707f7f8b078fc9318a471ef2d2e09f87857504ad6894c999d7d14f9",
-      "size": 3336,
-      "normalized_sha256": "88011f176707f7f8b078fc9318a471ef2d2e09f87857504ad6894c999d7d14f9"
+      "sha256": "68e14c6bbe04fb4e1245166a927bfb3f2d81e62f6554246ef5ddfbb5393556af",
+      "size": 4158,
+      "normalized_sha256": "68e14c6bbe04fb4e1245166a927bfb3f2d81e62f6554246ef5ddfbb5393556af"
     },
     "SKILL.md": {
       "role": "index",
-      "sha256": "e99d0bf31b3d8a72d433f4f6de2e1369e27633c77d563c212045834e16764e36",
-      "size": 2596,
-      "normalized_sha256": "e99d0bf31b3d8a72d433f4f6de2e1369e27633c77d563c212045834e16764e36"
+      "sha256": "64c1ced2baf62f3ca8315f4e770f2634a44995d0e65de3eebb3a1040d8d03056",
+      "size": 3010,
+      "normalized_sha256": "64c1ced2baf62f3ca8315f4e770f2634a44995d0e65de3eebb3a1040d8d03056"
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "8bd693c1522d47602ed20b04f937b9d7a35cdc237f5a40032b911e6f9e32e9dc",
-      "size": 4159,
-      "normalized_sha256": "8bd693c1522d47602ed20b04f937b9d7a35cdc237f5a40032b911e6f9e32e9dc"
+      "sha256": "9112227f3236c4c1a2f888e38eac24545408f3e534e21a683d5b6bb5ea75f7a4",
+      "size": 5106,
+      "normalized_sha256": "9112227f3236c4c1a2f888e38eac24545408f3e534e21a683d5b6bb5ea75f7a4"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -65,15 +65,15 @@
     },
     "scripts/check_shots.py": {
       "role": "index",
-      "sha256": "11c69da7825ee6a71dc7b76c9ce5b3b488bebc47b5d52320cb6786c745729d1b",
-      "size": 7458,
-      "normalized_sha256": "11c69da7825ee6a71dc7b76c9ce5b3b488bebc47b5d52320cb6786c745729d1b"
+      "sha256": "abc59f92aa938fbda5b6133fe1d642bead13e18a04460e8714ece1b90359ec95",
+      "size": 7588,
+      "normalized_sha256": "abc59f92aa938fbda5b6133fe1d642bead13e18a04460e8714ece1b90359ec95"
     },
     "scripts/export_chatgpt.py": {
       "role": "index",
-      "sha256": "284bf0171767c7b6bb5ca7e7389bb133820308b8a5d3f9200d489f909fc6ff36",
-      "size": 2185,
-      "normalized_sha256": "284bf0171767c7b6bb5ca7e7389bb133820308b8a5d3f9200d489f909fc6ff36"
+      "sha256": "71ba336bd64fd319d1da9f38537cd9f5dd94b1a440df24800878dbc146bde068",
+      "size": 2256,
+      "normalized_sha256": "71ba336bd64fd319d1da9f38537cd9f5dd94b1a440df24800878dbc146bde068"
     },
     "shared/shot-rules.md": {
       "role": "index",
@@ -83,9 +83,9 @@
     },
     "skills/infoflow-character-prompts/SKILL.md": {
       "role": "index",
-      "sha256": "d12b3cd70059f21998cc54506c0499aa747865d0977e0d1afd4fbc32a483132d",
-      "size": 4889,
-      "normalized_sha256": "d12b3cd70059f21998cc54506c0499aa747865d0977e0d1afd4fbc32a483132d"
+      "sha256": "e000e416387291d150889fa75995c3d3c73ff849a525273180df77047883a1db",
+      "size": 5249,
+      "normalized_sha256": "e000e416387291d150889fa75995c3d3c73ff849a525273180df77047883a1db"
     },
     "skills/infoflow-character-prompts/references/appearance-library.md": {
       "role": "index",
@@ -101,33 +101,39 @@
     },
     "skills/infoflow-eight-openings/SKILL.md": {
       "role": "index",
-      "sha256": "18871d117c99da88eb8d487baf864e20dcc034ad523a9ee13b9802a51c742c97",
-      "size": 2486,
-      "normalized_sha256": "18871d117c99da88eb8d487baf864e20dcc034ad523a9ee13b9802a51c742c97"
+      "sha256": "f6ee036d41b95d95e3fdd52ad571e69b31f4b6105ffe457576ca25d15d098fc2",
+      "size": 3254,
+      "normalized_sha256": "f6ee036d41b95d95e3fdd52ad571e69b31f4b6105ffe457576ca25d15d098fc2"
+    },
+    "skills/infoflow-script-breakdown/SKILL.md": {
+      "role": "index",
+      "sha256": "57ae1914636c2eae9a4c07461cf14cec9d7e4ffab76b6fd7707327bba9d99e95",
+      "size": 1462,
+      "normalized_sha256": "57ae1914636c2eae9a4c07461cf14cec9d7e4ffab76b6fd7707327bba9d99e95"
     },
     "skills/infoflow-storyboard-prompts/SKILL.md": {
       "role": "index",
-      "sha256": "574156073cbfad9da666845b690ac17d0e3216347ebe2fd69bf86ced61ac2c7a",
-      "size": 1819,
-      "normalized_sha256": "574156073cbfad9da666845b690ac17d0e3216347ebe2fd69bf86ced61ac2c7a"
+      "sha256": "b6f4438f19d1ee930af12b3be787571b6e835211375e6ab8acc72e2705202ffa",
+      "size": 2009,
+      "normalized_sha256": "b6f4438f19d1ee930af12b3be787571b6e835211375e6ab8acc72e2705202ffa"
     },
     "templates/project-brief.md": {
       "role": "index",
-      "sha256": "11a9260fa11bfb31949b183865f2e2160a8315a51cbde1ae28e021720ff9eff4",
-      "size": 606,
-      "normalized_sha256": "11a9260fa11bfb31949b183865f2e2160a8315a51cbde1ae28e021720ff9eff4"
+      "sha256": "035a46fea0873b50c613401b4338bbbf3fae625a7c96ea78709bb41a8a9f30a6",
+      "size": 645,
+      "normalized_sha256": "035a46fea0873b50c613401b4338bbbf3fae625a7c96ea78709bb41a8a9f30a6"
     },
     "tests/behavior-cases.md": {
       "role": "observe",
-      "sha256": "df9a02c1f33dac88a63dbbacfa87b355b86adcec1ee839382d6bb4b4ff4f0a59",
-      "size": 1484,
-      "normalized_sha256": "df9a02c1f33dac88a63dbbacfa87b355b86adcec1ee839382d6bb4b4ff4f0a59"
+      "sha256": "beb902edf79dd68c0782aed318777db4eb27e5b648ee17c1928d5b53f09c9ca1",
+      "size": 2087,
+      "normalized_sha256": "beb902edf79dd68c0782aed318777db4eb27e5b648ee17c1928d5b53f09c9ca1"
     },
     "tests/test_bundle.py": {
       "role": "observe",
-      "sha256": "8ae96ab0137a4474054c9320b460c4c838231611ffbce6bd7b0b6cef4d3058b3",
-      "size": 4549,
-      "normalized_sha256": "8ae96ab0137a4474054c9320b460c4c838231611ffbce6bd7b0b6cef4d3058b3"
+      "sha256": "21ec21648585fcc20641793275e3e73049a337980e8d05f3e7a2f66e3befcb94",
+      "size": 5017,
+      "normalized_sha256": "21ec21648585fcc20641793275e3e73049a337980e8d05f3e7a2f66e3befcb94"
     }
   },
   "managed_scope": {

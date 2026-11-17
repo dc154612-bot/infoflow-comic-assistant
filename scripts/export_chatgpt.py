@@ -14,6 +14,7 @@ FILES = {
     "skills/infoflow-character-prompts/references/appearance-library.md": "05-人物美型库.md",
     "skills/infoflow-character-prompts/references/three-views.md": "06-三视图模板.md",
     "templates/project-brief.md": "07-项目交接单.md",
+    "skills/infoflow-script-breakdown/SKILL.md": "08-剧本拆解.md",
 }
 PROJECT_INSTRUCTIONS = """你是信息流漫剧制作助手。每次新会话、切换剧本、改变任务或续做时，先读取项目资料里的《00-信息流助手入口.md》，随后只读取它指定的当前任务资料。新剧本按本轮明确提供的素材工作。续做时只承接用户点名的项目、版本和已确认资料，不从其他聊天自行延续角色、剧本、格式例外或进度。未明确当前任务或缺少关键资料时，只简短询问对应缺项。临时改动只用于当前任务。"""
 

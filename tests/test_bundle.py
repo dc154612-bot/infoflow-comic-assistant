@@ -69,6 +69,13 @@ class ShotTest(unittest.TestCase):
         self.assertEqual(validate(text, "storyboard", duration=8, audio="一，二，三。"), [])
         self.assertTrue(validate(text, "storyboard"))
 
+    def test_short_storyboard_final_group(self):
+        for duration in (31, 32):
+            with self.subTest(duration=duration):
+                text = f"分镜头组4｜30—{duration}秒\n{shot(10, 30, duration, '她抬头。')}"
+                self.assertEqual(validate(text, "storyboard", duration=duration, group=4,
+                                          audio="她抬头。"), [])
+
     def test_targeted_group_keeps_global_shot_numbering(self):
         text = f"分镜头组3｜20—30秒\n{shot(8, 20, 22)}\n{shot(9, 22, 25)}\n{shot(10, 25, 30)}"
         self.assertEqual(validate(text, "storyboard", group=3), [])
@@ -88,7 +95,8 @@ class ExportTest(unittest.TestCase):
             export(destination)
             self.assertEqual({p.name for p in destination.iterdir()}, set(FILES.values()) | {"项目指令.txt"})
             entry = (destination / FILES["SKILL.md"]).read_text(encoding="utf-8")
-            for source in ("skills/infoflow-character-prompts/SKILL.md", "skills/infoflow-storyboard-prompts/SKILL.md",
+            for source in ("skills/infoflow-script-breakdown/SKILL.md",
+                           "skills/infoflow-character-prompts/SKILL.md", "skills/infoflow-storyboard-prompts/SKILL.md",
                            "skills/infoflow-eight-openings/SKILL.md", "templates/project-brief.md"):
                 self.assertIn(f"《{FILES[source]}》", entry)
             self.assertNotIn("skills/", entry)

@@ -6,28 +6,31 @@
 AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知索引维护流程 | R:code:SKILL.md | A:- | S:制作任务按当前入口选读资料，源码索引维护独立于单剧交接
 CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
 LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
-README.md[SU6T]: F:说明如何在不同宿主使用制作技能、交接单和分镜检查 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目资料只在人工替换文件后采用 GitHub 上的新版本
-SKILL.md[AW9T]: F:按本轮制作目标选择人物、分镜或开头技能，并用已确认素材延续指定剧集 | R:code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:本轮例外不会自动变成新剧默认；项目或稿件版本发生冲突时必须先核对
+README.md[SU6T]: F:说明从正文和配音进入四条制作技能，以及 ChatGPT 项目部署和分镜校验的使用方法 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目从导出的 Markdown 取规则，仓库变更后需要在项目设置里更新资料
+SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:同时提供正文和配音时间且未点名任务时先拆解，续做默认只进入下一步；本轮例外不会自动带入新剧
 
 ===/<repository>/scripts/===
-check_shots.py[TQ8S]: F:解析影片镜头文本，校验时序、字段、景别、镜号及与音频原文的一致性 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:单组校验允许沿用全片起始镜号；只有主动提供音频文件才能判断逐字保真
-export_chatgpt.py[OU7T]: F:从仓库规则生成文件名唯一的 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:导出的交叉引用必须转换成项目资料名称，改名时须同步维护映射并重新导出
+check_shots.py[TQ8S]: F:解析镜头文本，校验字段、时序、编号、景别和音频原文 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:正文不足三秒的分组允许一镜起步，仍须满足整数秒、连续时段和实际终点；只有提供音频原文才检查逐字保真
+export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:导出时将仓库文件链接换成项目资料名称，增删规则时同步维护文件名映射
 
 ===/<repository>/shared/===
 shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频保真、镜头语言及口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:只有本轮明确要求场景时才在时间字段后追加；明确同时动作与说话的原文允许同镜
 
 ===/<repository>/skills/infoflow-character-prompts/===
-SKILL.md[DB8T]: F:以当前角色设定生成完整和精简两版提示词，或用固定模板制作三视图提示词 | R:code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:三视图使用经确认的角色完整版逐字替换模板中的人物描述
+SKILL.md[DB8T]: F:按人物设定产出完整与精简提示词，并用固定模板生成三视图提示词或参考图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:三视图优先使用确认的完整版，完整流程中缺少确认版本时用当轮生成稿；要求生图时调用可用工具
 
 ===/<repository>/skills/infoflow-character-prompts/references/===
 appearance-library.md[CB5T]: F:提供角色身份对应的造型类型、五官、妆发和记忆点参考 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:-
 three-views.md[CB5T]: F:提供角色头肩特写和正侧背全身视角同图排布的固定模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:-
 
 ===/<repository>/skills/infoflow-eight-openings/===
-SKILL.md[DB8T]: F:从同一段前五秒音频生成八套有不同钩子且能接回正文的镜头方案 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:正文缺五秒切点时只在用户允许或已要求完整流程的情况下重做组一
+SKILL.md[DB8T]: F:从同一段前五秒配音生成八套有首帧差异且接回正文的镜头方案 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:只有五秒区间端点时可提待对齐的内部切镜建议，八套逐字保留配音；仅在获准补切点或完整流程中才能修正文组一
 
 ===/<repository>/skills/infoflow-storyboard-prompts/===
-SKILL.md[DB8T]: F:把当前剧本做成按音频分组的正文，或仅替换指定镜头 | R:code:shared/shot-rules.md | A:- | S:只有总时长时给出待音频对齐的分配建议；单镜补写须保留确认的原编号、音频和时段
+SKILL.md[DB8T]: F:按配音时间把剧情节点转成连续分组镜头，支持只替换指定镜头 | R:code:shared/shot-rules.md,code:skills/infoflow-script-breakdown/SKILL.md | A:- | S:正文默认前四十秒并每十秒分组，短尾按实际终点，只有总时长时给待对齐建议；补镜保留确认镜号、时段和音频
 
 ===/<repository>/templates/===
-project-brief.md[SW5T]: F:记录单部剧跨会话续作的确认稿、当前范围及缺项 | R:code:SKILL.md | A:- | S:-
+project-brief.md[SW5T]: F:记录单剧续作使用的确认稿、拆解、配音、分镜范围及正在等待的资料 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md | A:- | S:-
+
+===/<repository>/skills/infoflow-script-breakdown/===
+SKILL.md[DB7T]: F:将当前正文和配音拆为出场人物、按故事顺序的剧情节点及必须保留的动作道具 | R:code:SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:没有细分时间点时按剧情顺序标注待对齐，不把总时长推成真实分界；音频以确认后的配音稿为准

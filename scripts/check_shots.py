@@ -83,6 +83,8 @@ def validate(text, mode, *, audio=None, duration=40, group=None, scene=False, or
         if mode == "openings":
             next_shot = 1
         low, high = {"storyboard": (3, 4), "openings": (2, 3), "insert": (1, 1)}[mode]
+        if mode == "storyboard" and 0 < section.end - section.start < low:
+            low, high = 1, section.end - section.start
         if not low <= len(section.shots) <= high:
             errors.append(f"{section.kind or '补镜'}{section.number or ''}的镜头数量错误。")
         last_end = section.start if mode != "insert" else None
