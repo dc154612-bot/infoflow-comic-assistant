@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-17T08:41:32Z",
-  "updated_at": "2026-11-17T14:50:39Z",
+  "updated_at": "2026-11-17T15:05:18Z",
   "files": {
     ".gitattributes": {
       "role": "index",
@@ -35,9 +35,9 @@
     },
     "README.md": {
       "role": "index",
-      "sha256": "2eb47726f0897a597f63904743bde92b283ef6064c3f155282931c612420cae6",
-      "size": 4126,
-      "normalized_sha256": "2eb47726f0897a597f63904743bde92b283ef6064c3f155282931c612420cae6"
+      "sha256": "3fb23ef0be942dbb2202303bc8b7e7d19c8fdb8cea6e159741142757ce44d7e5",
+      "size": 4231,
+      "normalized_sha256": "3fb23ef0be942dbb2202303bc8b7e7d19c8fdb8cea6e159741142757ce44d7e5"
     },
     "SKILL.md": {
       "role": "index",
@@ -47,9 +47,9 @@
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "02b87d3a7e5e8a4c6a3d365f07ff7c84e262e60f7de147c4deeb2a2cbc394cfe",
-      "size": 5619,
-      "normalized_sha256": "02b87d3a7e5e8a4c6a3d365f07ff7c84e262e60f7de147c4deeb2a2cbc394cfe"
+      "sha256": "89978f14d97d2a517d8c90cdf3924118965fa83440bfc7c072b15c9e7d5c36f2",
+      "size": 5745,
+      "normalized_sha256": "89978f14d97d2a517d8c90cdf3924118965fa83440bfc7c072b15c9e7d5c36f2"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -65,9 +65,9 @@
     },
     "scripts/check_shots.py": {
       "role": "index",
-      "sha256": "abc59f92aa938fbda5b6133fe1d642bead13e18a04460e8714ece1b90359ec95",
-      "size": 7588,
-      "normalized_sha256": "abc59f92aa938fbda5b6133fe1d642bead13e18a04460e8714ece1b90359ec95"
+      "sha256": "11f024fd782ec2ef1303d3f485b40e6bd16c38d19607b8a15713614814e12b24",
+      "size": 9577,
+      "normalized_sha256": "11f024fd782ec2ef1303d3f485b40e6bd16c38d19607b8a15713614814e12b24"
     },
     "scripts/export_chatgpt.py": {
       "role": "index",
@@ -77,9 +77,9 @@
     },
     "shared/shot-rules.md": {
       "role": "index",
-      "sha256": "6cc2a3a4d369c33e3dbc7eaa3420bf32f3ffaa69cddd8cca84020f926a0fa2f0",
-      "size": 4119,
-      "normalized_sha256": "6cc2a3a4d369c33e3dbc7eaa3420bf32f3ffaa69cddd8cca84020f926a0fa2f0"
+      "sha256": "6018461ec88afe391887e79f7e3a3dd0fba7236889cc952abbb2d23f4197e5c6",
+      "size": 4644,
+      "normalized_sha256": "6018461ec88afe391887e79f7e3a3dd0fba7236889cc952abbb2d23f4197e5c6"
     },
     "skills/infoflow-character-prompts/SKILL.md": {
       "role": "index",
@@ -101,9 +101,9 @@
     },
     "skills/infoflow-eight-openings/SKILL.md": {
       "role": "index",
-      "sha256": "f6ee036d41b95d95e3fdd52ad571e69b31f4b6105ffe457576ca25d15d098fc2",
-      "size": 3254,
-      "normalized_sha256": "f6ee036d41b95d95e3fdd52ad571e69b31f4b6105ffe457576ca25d15d098fc2"
+      "sha256": "0710a286bc47ffcc0ecc926cedd6d863cf1293a9d3ba7a7734d059666ad359b3",
+      "size": 3371,
+      "normalized_sha256": "0710a286bc47ffcc0ecc926cedd6d863cf1293a9d3ba7a7734d059666ad359b3"
     },
     "skills/infoflow-script-breakdown/SKILL.md": {
       "role": "index",
@@ -113,9 +113,9 @@
     },
     "skills/infoflow-storyboard-prompts/SKILL.md": {
       "role": "index",
-      "sha256": "b6f4438f19d1ee930af12b3be787571b6e835211375e6ab8acc72e2705202ffa",
-      "size": 2009,
-      "normalized_sha256": "b6f4438f19d1ee930af12b3be787571b6e835211375e6ab8acc72e2705202ffa"
+      "sha256": "21136235c4c3b9b6b76e0911bdd17b1e40c0fb525fa1e471223c2b7c936c1d38",
+      "size": 2692,
+      "normalized_sha256": "21136235c4c3b9b6b76e0911bdd17b1e40c0fb525fa1e471223c2b7c936c1d38"
     },
     "templates/project-brief.md": {
       "role": "index",
@@ -125,15 +125,15 @@
     },
     "tests/behavior-cases.md": {
       "role": "observe",
-      "sha256": "a3f58021d31f139c0766d9b1db79221cd9f79a3258408aad8c14e7cf5b2bd1cc",
-      "size": 4815,
-      "normalized_sha256": "a3f58021d31f139c0766d9b1db79221cd9f79a3258408aad8c14e7cf5b2bd1cc"
+      "sha256": "c39e937a84c21d504a0f3a1da2811ae024ecc8de29f3ffd678608dc4bdf2d5af",
+      "size": 5193,
+      "normalized_sha256": "c39e937a84c21d504a0f3a1da2811ae024ecc8de29f3ffd678608dc4bdf2d5af"
     },
     "tests/test_bundle.py": {
       "role": "observe",
-      "sha256": "21ec21648585fcc20641793275e3e73049a337980e8d05f3e7a2f66e3befcb94",
-      "size": 5017,
-      "normalized_sha256": "21ec21648585fcc20641793275e3e73049a337980e8d05f3e7a2f66e3befcb94"
+      "sha256": "789a48f7a4fb4a7f98ef96a31a362b928696005cdf83823f8a8731090026b4c2",
+      "size": 7090,
+      "normalized_sha256": "789a48f7a4fb4a7f98ef96a31a362b928696005cdf83823f8a8731090026b4c2"
     }
   },
   "managed_scope": {

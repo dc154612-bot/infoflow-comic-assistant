@@ -33,6 +33,12 @@ class ShotTest(unittest.TestCase):
         bad = openings().split("开头方案8", 1)[0]
         self.assertTrue(validate(bad, "openings"))
 
+    def test_openings_reject_four_shots(self):
+        four_shots = "\n".join(shot(n + 1, start, end)
+                               for n, (start, end) in enumerate(((0, 1), (1, 2), (2, 3), (3, 5))))
+        text = f"开头方案1｜0—5秒\n{four_shots}\n开头方案2" + openings().split("开头方案2", 1)[1]
+        self.assertEqual(validate(text, "openings"), ["开头方案1的镜头数量错误。"])
+
     def test_openings_first_shot_maximum_three_seconds(self):
         bad = openings().replace("镜头1｜0—2秒", "镜头1｜0—4秒", 1)
         self.assertTrue(any("超过三秒" in error for error in validate(bad, "openings")))
@@ -53,6 +59,19 @@ class ShotTest(unittest.TestCase):
                     shot(12, 21, 24, "门锁响了！")):
             self.assertTrue(validate(bad, "insert", original=original))
 
+    def test_insert_rounds_legacy_duration_up_and_keeps_integer_edge(self):
+        for source_start, source_end, expected_start, expected_end in (
+            ("2.3", "4.5", 3, 6),
+            ("2.3", 5, 2, 5),
+            (5, "7.2", 5, 8),
+        ):
+            with self.subTest(start=source_start, end=source_end):
+                original = shot(12, source_start, source_end, "门锁响了。")
+                updated = shot(12, expected_start, expected_end, "门锁响了。")
+                self.assertEqual(validate(updated, "insert", original=original), [])
+                shortened = shot(12, expected_start, expected_end - 1, "门锁响了。")
+                self.assertTrue(validate(shortened, "insert", original=original))
+
     def test_scene_is_opt_in(self):
         with_scene = shot(1, 0, 2) + "\n【场景】雨巷"
         self.assertTrue(validate(with_scene, "insert"))
@@ -70,11 +89,21 @@ class ShotTest(unittest.TestCase):
         self.assertTrue(validate(text, "storyboard"))
 
     def test_short_storyboard_final_group(self):
-        for duration in (31, 32):
-            with self.subTest(duration=duration):
-                text = f"分镜头组4｜30—{duration}秒\n{shot(10, 30, duration, '她抬头。')}"
-                self.assertEqual(validate(text, "storyboard", duration=duration, group=4,
-                                          audio="她抬头。"), [])
+        one_second = f"分镜头组4｜30—31秒\n{shot(10, 30, 31, '她抬头。')}"
+        self.assertEqual(validate(one_second, "storyboard", duration=31, group=4), [])
+        heading = "分镜头组4｜30—32秒"
+        two_seconds = f"{heading}\n{shot(10, 30, 31)}\n{shot(11, 31, 32)}"
+        self.assertEqual(validate(two_seconds, "storyboard", duration=32, group=4), [])
+        self.assertTrue(validate(f"{heading}\n{shot(10, 30, 32)}", "storyboard", duration=32, group=4))
+
+    def test_two_shot_storyboard_keeps_first_five_audio_on_its_side(self):
+        text = f"分镜头组1｜0—10秒\n{shot(1, 0, 5, '雨停了。')}\n{shot(2, 5, 10, '她抬头。')}"
+        self.assertEqual(validate(text, "storyboard", duration=10, first_five_audio="雨停了。"), [])
+        self.assertIn("正文前五秒的对应音频和原文不一致。",
+                      validate(text, "storyboard", duration=10, first_five_audio="雨停了，她抬头。"))
+        no_cut_at_five = text.replace("0—5秒", "0—6秒").replace("5—10秒", "6—10秒")
+        self.assertIn("已提供真实前五秒音频原文，正文须在第5秒切镜。",
+                      validate(no_cut_at_five, "storyboard", duration=10, first_five_audio="雨停了。"))
 
     def test_targeted_group_keeps_global_shot_numbering(self):
         text = f"分镜头组3｜20—30秒\n{shot(8, 20, 22)}\n{shot(9, 22, 25)}\n{shot(10, 25, 30)}"

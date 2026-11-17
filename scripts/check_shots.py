@@ -1,6 +1,8 @@
 """Validate the structure and source audio of a production storyboard."""
 import argparse
 from dataclasses import dataclass, field
+from decimal import Decimal
+from math import ceil
 from pathlib import Path
 import re
 
@@ -8,6 +10,7 @@ import re
 FIELDS = ("对应音频", "景别", "人物动作与表情", "走位", "镜头运动", "光线", "时间")
 SCALES = {"大远景", "远景", "全景", "中景", "中近景", "近景", "特写", "大特写"}
 HEADER = re.compile(r"(分镜头组|开头方案|镜头)([0-9]+)｜([0-9]+)—([0-9]+)秒")
+LEGACY_SHOT_HEADER = re.compile(r"(镜头)([0-9]+)｜([0-9]+(?:\.[0-9]+)?)—([0-9]+(?:\.[0-9]+)?)秒")
 FIELD = re.compile(r"【([^】]+)】(.*)")
 
 
@@ -28,7 +31,7 @@ class Section:
     shots: list = field(default_factory=list)
 
 
-def parse(text):
+def parse(text, *, normalize_legacy_shot=False):
     sections = []
     section = Section("", 0, 0, 0)
     shot = None
@@ -37,10 +40,21 @@ def parse(text):
         lines = lines[1:-1]
     for line in lines:
         heading = HEADER.fullmatch(line.strip())
+        if heading is None and normalize_legacy_shot:
+            heading = LEGACY_SHOT_HEADER.fullmatch(line.strip())
         label = FIELD.fullmatch(line.lstrip())
         if heading:
             kind, n, start, end = heading.groups()
             if kind == "镜头":
+                if "." in start or "." in end:
+                    original_start, original_end = Decimal(start), Decimal(end)
+                    length = ceil(original_end - original_start)
+                    if original_end <= original_start:
+                        raise ValueError("原镜头的结束时间须晚于开始时间。")
+                    # Keep an existing integer edge so the replacement can join its neighbor.
+                    start = (int(original_end) - length if original_end == int(original_end)
+                             else ceil(original_start))
+                    end = start + length
                 shot = Shot(int(n), int(start), int(end))
                 section.shots.append(shot)
             else:
@@ -56,7 +70,8 @@ def parse(text):
     return sections or [section]
 
 
-def validate(text, mode, *, audio=None, duration=40, group=None, scene=False, original=None):
+def validate(text, mode, *, audio=None, duration=40, group=None, scene=False,
+             original=None, first_five_audio=None):
     sections = parse(text)
     fields = FIELDS + (("场景",) if scene else ())
     errors = []
@@ -82,9 +97,9 @@ def validate(text, mode, *, audio=None, duration=40, group=None, scene=False, or
     for section in sections:
         if mode == "openings":
             next_shot = 1
-        low, high = {"storyboard": (3, 4), "openings": (2, 3), "insert": (1, 1)}[mode]
-        if mode == "storyboard" and 0 < section.end - section.start < low:
-            low, high = 1, section.end - section.start
+        low, high = {"storyboard": (2, 4), "openings": (2, 3), "insert": (1, 1)}[mode]
+        if mode == "storyboard" and section.end - section.start == 1:
+            low = high = 1
         if not low <= len(section.shots) <= high:
             errors.append(f"{section.kind or '补镜'}{section.number or ''}的镜头数量错误。")
         last_end = section.start if mode != "insert" else None
@@ -110,6 +125,12 @@ def validate(text, mode, *, audio=None, duration=40, group=None, scene=False, or
 
         if mode != "insert" and last_end != section.end:
             errors.append(f"{section.kind}{section.number}的结尾与标题不一致。")
+        if mode == "storyboard" and first_five_audio is not None and section.start == 0:
+            if not any(shot.end == 5 for shot in section.shots):
+                errors.append("已提供真实前五秒音频原文，正文须在第5秒切镜。")
+            elif "".join(part for shot, part in zip(section.shots, block_audio)
+                         if shot.end <= 5) != first_five_audio:
+                errors.append("正文前五秒的对应音频和原文不一致。")
         if mode == "openings":
             if section.shots and section.shots[0].end > 3:
                 errors.append(f"开头方案{section.number}的第一镜超过三秒。")
@@ -120,7 +141,7 @@ def validate(text, mode, *, audio=None, duration=40, group=None, scene=False, or
     if mode != "openings" and audio is not None and "".join(audio_parts) != audio:
         errors.append("对应音频和原文不一致。")
     if mode == "insert" and original is not None:
-        old = parse(original)
+        old = parse(original, normalize_legacy_shot=True)
         if len(old) != 1 or old[0].kind or len(old[0].shots) != 1:
             raise ValueError("原稿须为包含原镜头标题的单镜文本。")
         if not errors:
@@ -128,7 +149,7 @@ def validate(text, mode, *, audio=None, duration=40, group=None, scene=False, or
             if (before.number, before.start, before.end, dict(before.fields).get("对应音频")) != (
                 after.number, after.start, after.end, dict(after.fields).get("对应音频")
             ):
-                errors.append("补镜改变了原编号、原时间或原音频。")
+                errors.append("补镜的编号、整数时间范围或对应音频与原镜要求不符。")
     return errors
 
 
@@ -137,6 +158,7 @@ def main():
     parser.add_argument("mode", choices=("storyboard", "openings", "insert"))
     parser.add_argument("file", type=Path)
     parser.add_argument("--audio", type=Path, help="对应音频原文。检查某组时用该组原文。")
+    parser.add_argument("--first-five-audio", type=Path, help="正文前五秒的真实配音原文。")
     parser.add_argument("--original", type=Path, help="补镜用的原镜头。")
     parser.add_argument("--duration", type=int, help="整数秒，默认 40。")
     parser.add_argument("--group", type=int, help="只检查指定正文分组。")
@@ -148,12 +170,18 @@ def main():
         parser.error("--group 仅用于正文，取值为 1—4。")
     if args.original is not None and args.mode != "insert":
         parser.error("--original 仅用于补镜。")
+    if args.first_five_audio is not None and not (
+        args.mode == "storyboard" and args.group in (None, 1) and (args.duration or 40) >= 5
+    ):
+        parser.error("--first-five-audio 仅用于时长至少五秒的正文或正文第一组。")
     try:
         result = validate(
             args.file.read_text(encoding="utf-8-sig"), args.mode,
             audio=args.audio.read_text(encoding="utf-8-sig").rstrip("\n") if args.audio else None,
             duration=args.duration or 40, group=args.group, scene=args.scene,
             original=args.original.read_text(encoding="utf-8-sig") if args.original else None,
+            first_five_audio=(args.first_five_audio.read_text(encoding="utf-8-sig").rstrip("\n")
+                              if args.first_five_audio else None),
         )
     except (OSError, ValueError) as exc:
         result = [str(exc)]
