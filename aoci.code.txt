@@ -20,7 +20,7 @@ shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频
 SKILL.md[DB8T]: F:按真人主演选角与时装棚拍质感生成定妆提示词，并处理换装和三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:核心角色逐套落实可辨剪裁、材质层次及近景工艺。服装华丽度随场合，脸和体态沿用确认设定。剧本要求同貌时保留所需相似度
 
 ===/<repository>/skills/infoflow-character-prompts/references/===
-appearance-library.md[CB7T]: F:提供按剧中身份检索的男女造型类型、五官妆发、古装示例与角色记忆点 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:确认人设和剧情优先于造型示例。换装沿用已定面容体态，局部识别特征按角色自身左右固定
+appearance-library.md[CB7T]: F:提供角色造型类型、五官妆发与古装示例，并按场合收录可复用的造型细节 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:确认人设和剧情优先于造型示例。换装沿用已定面容体态，局部识别特征按角色自身左右固定。参考图条目只记录可独立选用的细节及来源
 three-views.md[CB5T]: F:规定头肩定妆特写与正侧背全身同图的白底拍摄模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:以侧前柔光和补光保留脸部骨相及服装明暗。各视角沿用演员身份、配饰位置和服装结构，采用固定构图
 
 ===/<repository>/skills/infoflow-eight-openings/===

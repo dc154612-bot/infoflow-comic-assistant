@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-17T08:41:32Z",
-  "updated_at": "2026-11-17T14:20:45Z",
+  "updated_at": "2026-11-17T14:25:11Z",
   "files": {
     ".gitattributes": {
       "role": "index",
@@ -47,9 +47,9 @@
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "9facd6199c2502e136c5fc498118778434cc35e34d3b24cb4e8d4f4fa6756b25",
-      "size": 5508,
-      "normalized_sha256": "9facd6199c2502e136c5fc498118778434cc35e34d3b24cb4e8d4f4fa6756b25"
+      "sha256": "fd2323834f87d79fe95c93b1f80bfe0df3886355340279fc0b797816910a5983",
+      "size": 5571,
+      "normalized_sha256": "fd2323834f87d79fe95c93b1f80bfe0df3886355340279fc0b797816910a5983"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -89,9 +89,9 @@
     },
     "skills/infoflow-character-prompts/references/appearance-library.md": {
       "role": "index",
-      "sha256": "7df92b56e83cbc0eb6c85f3932f3b9e96284bf39e981ad998261d90858939362",
-      "size": 5669,
-      "normalized_sha256": "7df92b56e83cbc0eb6c85f3932f3b9e96284bf39e981ad998261d90858939362"
+      "sha256": "0c20775a8fa75b957880d924596b2cd8d9d2d90d5c3a90cb71dac270bb5c0980",
+      "size": 6592,
+      "normalized_sha256": "0c20775a8fa75b957880d924596b2cd8d9d2d90d5c3a90cb71dac270bb5c0980"
     },
     "skills/infoflow-character-prompts/references/three-views.md": {
       "role": "index",
