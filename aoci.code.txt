@@ -1,0 +1,33 @@
+#AOCI-CODE-VOLUME: 1
+
+===/<repository>/===
+.gitattributes[FV4T]: F:为跨系统检出统一文本行尾 | R:- | A:- | S:文本检出需要保持原始 LF 字节，避免 AOCI 指纹仅因平台被改写
+.gitignore[FV5T]: F:排除本机宿主配置、私有制作目录与派生产物 | R:code:scripts/export_chatgpt.py | A:- | S:剧本及交接单应写入被忽略的 projects/
+AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知索引维护流程 | R:code:SKILL.md | A:- | S:制作任务按当前入口选读资料，源码索引维护独立于单剧交接
+CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
+LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
+README.md[SU6T]: F:说明如何在不同宿主使用制作技能、交接单和分镜检查 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目资料只在人工替换文件后采用 GitHub 上的新版本
+SKILL.md[AW9T]: F:按本轮制作目标选择人物、分镜或开头技能，并用已确认素材延续指定剧集 | R:code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:本轮例外不会自动变成新剧默认；项目或稿件版本发生冲突时必须先核对
+
+===/<repository>/scripts/===
+check_shots.py[TQ8S]: F:解析影片镜头文本，校验时序、字段、景别、镜号及与音频原文的一致性 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:单组校验允许沿用全片起始镜号；只有主动提供音频文件才能判断逐字保真
+export_chatgpt.py[OU7T]: F:从仓库规则生成文件名唯一的 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:导出的交叉引用必须转换成项目资料名称，改名时须同步维护映射并重新导出
+
+===/<repository>/shared/===
+shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频保真、镜头语言及口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:只有本轮明确要求场景时才在时间字段后追加；明确同时动作与说话的原文允许同镜
+
+===/<repository>/skills/infoflow-character-prompts/===
+SKILL.md[DB8T]: F:以当前角色设定生成完整和精简两版提示词，或用固定模板制作三视图提示词 | R:code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:三视图使用经确认的角色完整版逐字替换模板中的人物描述
+
+===/<repository>/skills/infoflow-character-prompts/references/===
+appearance-library.md[CB5T]: F:提供角色身份对应的造型类型、五官、妆发和记忆点参考 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:-
+three-views.md[CB5T]: F:提供角色头肩特写和正侧背全身视角同图排布的固定模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:-
+
+===/<repository>/skills/infoflow-eight-openings/===
+SKILL.md[DB8T]: F:从同一段前五秒音频生成八套有不同钩子且能接回正文的镜头方案 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:正文缺五秒切点时只在用户允许或已要求完整流程的情况下重做组一
+
+===/<repository>/skills/infoflow-storyboard-prompts/===
+SKILL.md[DB8T]: F:把当前剧本做成按音频分组的正文，或仅替换指定镜头 | R:code:shared/shot-rules.md | A:- | S:只有总时长时给出待音频对齐的分配建议；单镜补写须保留确认的原编号、音频和时段
+
+===/<repository>/templates/===
+project-brief.md[SW5T]: F:记录单部剧跨会话续作的确认稿、当前范围及缺项 | R:code:SKILL.md | A:- | S:-
