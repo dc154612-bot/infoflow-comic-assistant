@@ -17,11 +17,11 @@ export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT
 shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频保真、镜头语言及口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:只有本轮明确要求场景时才在时间字段后追加；明确同时动作与说话的原文允许同镜
 
 ===/<repository>/skills/infoflow-character-prompts/===
-SKILL.md[DB8T]: F:按真人信息流主演审美制作角色定妆提示词，并承接换装与三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:现代核心角色默认韩剧主演级精修，核心男角明确骨相；确认的人物参考优先。同轮指定换装时只局部修改确认稿后生成三视图
+SKILL.md[DB8T]: F:按真人主演选角与时装棚拍质感生成定妆提示词，并处理换装和三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:质感图用于提取打光、精修、妆发和面料表现，确认的角色图用于锁定身份。角色造型遵从剧本和已确认设定
 
 ===/<repository>/skills/infoflow-character-prompts/references/===
-appearance-library.md[CB7T]: F:提供真人主演定妆的十六种选型、场合造型、神态和中景辨识规则 | R:code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:以主演级精修增强吸引力，同气质角色靠轮廓与神态区分；服装随造型版本记录，换装不改变角色识别线索
-three-views.md[CB5T]: F:规定真人主演定妆的头肩特写与正侧背全身同图模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:采用固定横版布局替代人物原稿内的构图指令，各角度保持同一妆发、配饰和衣着
+appearance-library.md[CB7T]: F:规定真人信息流定妆的五官、妆发、打光、精修、整套服装及十六种选型 | R:code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:白底柔光仍保留脸部层次和衣料差异。角色辨识依靠轮廓和表演，换装保留确认的身份特征
+three-views.md[CB5T]: F:规定头肩定妆特写与正侧背全身同图的白底拍摄模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:发饰和耳饰按角色自身左右固定，衣服结构跨角度一致；版式采用模板而非旧稿取景
 
 ===/<repository>/skills/infoflow-eight-openings/===
 SKILL.md[DB8T]: F:从同一段前五秒配音生成八套有首帧差异且接回正文的镜头方案 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:只有五秒区间端点时可提待对齐的内部切镜建议，八套逐字保留配音；仅在获准补切点或完整流程中才能修正文组一
