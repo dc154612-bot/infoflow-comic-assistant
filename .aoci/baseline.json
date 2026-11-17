@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-17T08:41:32Z",
-  "updated_at": "2026-11-17T09:09:15Z",
+  "updated_at": "2026-11-17T09:30:25Z",
   "files": {
     ".gitattributes": {
       "role": "index",
@@ -47,9 +47,9 @@
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "9112227f3236c4c1a2f888e38eac24545408f3e534e21a683d5b6bb5ea75f7a4",
-      "size": 5106,
-      "normalized_sha256": "9112227f3236c4c1a2f888e38eac24545408f3e534e21a683d5b6bb5ea75f7a4"
+      "sha256": "be1369e7b18a441bd88f782968d10ddece238703166f948a09ce28c9f07c7231",
+      "size": 5448,
+      "normalized_sha256": "be1369e7b18a441bd88f782968d10ddece238703166f948a09ce28c9f07c7231"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -83,21 +83,21 @@
     },
     "skills/infoflow-character-prompts/SKILL.md": {
       "role": "index",
-      "sha256": "e000e416387291d150889fa75995c3d3c73ff849a525273180df77047883a1db",
-      "size": 5249,
-      "normalized_sha256": "e000e416387291d150889fa75995c3d3c73ff849a525273180df77047883a1db"
+      "sha256": "044893b76dc3b3f694c7a40adf9cf5bbb7d2574b201071698c5b5efa3b8f3460",
+      "size": 5395,
+      "normalized_sha256": "044893b76dc3b3f694c7a40adf9cf5bbb7d2574b201071698c5b5efa3b8f3460"
     },
     "skills/infoflow-character-prompts/references/appearance-library.md": {
       "role": "index",
-      "sha256": "788dff72742c7f8c536fae1c5c786dcca452aa8a168fc13d46e583ca030d039a",
-      "size": 5636,
-      "normalized_sha256": "788dff72742c7f8c536fae1c5c786dcca452aa8a168fc13d46e583ca030d039a"
+      "sha256": "51cdc0c15778f1cfc55a282f6b49908349cf1db673964fca19bc014e2057a15d",
+      "size": 9648,
+      "normalized_sha256": "51cdc0c15778f1cfc55a282f6b49908349cf1db673964fca19bc014e2057a15d"
     },
     "skills/infoflow-character-prompts/references/three-views.md": {
       "role": "index",
-      "sha256": "cd0261ccf47232cdd726860fba0b2207c32201ac29490014dcb4cdf8f55ebbab",
-      "size": 983,
-      "normalized_sha256": "cd0261ccf47232cdd726860fba0b2207c32201ac29490014dcb4cdf8f55ebbab"
+      "sha256": "1f96573f6037f91fa9cc6c124ebeab020bd6b1bb8f9c0b8204681e402befb3a3",
+      "size": 1223,
+      "normalized_sha256": "1f96573f6037f91fa9cc6c124ebeab020bd6b1bb8f9c0b8204681e402befb3a3"
     },
     "skills/infoflow-eight-openings/SKILL.md": {
       "role": "index",
@@ -125,9 +125,9 @@
     },
     "tests/behavior-cases.md": {
       "role": "observe",
-      "sha256": "beb902edf79dd68c0782aed318777db4eb27e5b648ee17c1928d5b53f09c9ca1",
-      "size": 2087,
-      "normalized_sha256": "beb902edf79dd68c0782aed318777db4eb27e5b648ee17c1928d5b53f09c9ca1"
+      "sha256": "3dffbd563d01d0923bd43166056a0939d2ec9e77ea0e3ae9f468f4ed35a5771a",
+      "size": 2622,
+      "normalized_sha256": "3dffbd563d01d0923bd43166056a0939d2ec9e77ea0e3ae9f468f4ed35a5771a"
     },
     "tests/test_bundle.py": {
       "role": "observe",
