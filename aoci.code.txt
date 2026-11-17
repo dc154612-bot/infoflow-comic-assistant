@@ -7,17 +7,17 @@ AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知�
 CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
 LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
 README.md[SU6T]: F:说明默认从剧本交付人物提示词和可选配音时长，并介绍四条制作技能、ChatGPT 项目部署和分镜校验 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目从导出的 Markdown 取规则，仓库变更后需要在项目设置里更新资料
-SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只提供剧本时在内部拆解并直接交付双版人物提示词，配音时长可省略。项目和聊天标题不选择任务，续做只进入下一步
+SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只提供剧本时内部拆解并为每个角色交付一份完整版，配音时长可省略。项目和聊天标题只用于定位，续做只进入下一步
 
 ===/<repository>/scripts/===
 check_shots.py[TQ8S]: F:解析镜头文本，校验字段、时序、编号、景别和音频原文 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:正文不足三秒的分组允许一镜起步，仍须满足整数秒、连续时段和实际终点；只有提供音频原文才检查逐字保真
-export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:项目指令直接声明只贴剧本时交付人物提示词，防止被项目名称分流。导出时把仓库链接换成项目资料名称
+export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT 项目资料及项目指令 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md,code:shared/shot-rules.md,code:templates/project-brief.md | A:export | S:项目指令直接声明只贴剧本时为每个角色交付一份完整版。导出时把仓库链接换成项目资料名称
 
 ===/<repository>/shared/===
 shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频保真、镜头语言及口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:只有本轮明确要求场景时才在时间字段后追加；明确同时动作与说话的原文允许同镜
 
 ===/<repository>/skills/infoflow-character-prompts/===
-SKILL.md[DB8T]: F:按真人主演选角与时装棚拍质感生成定妆提示词，并处理换装和三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:核心角色逐套落实可辨剪裁、材质层次及近景工艺。服装华丽度随场合，脸和体态沿用确认设定。剧本要求同貌时保留所需相似度
+SKILL.md[DB8T]: F:按真人主演选角与时装棚拍质感生成每个角色的一份完整版定妆提示词，并处理换装和三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:核心角色逐套落实可辨剪裁、材质层次及近景工艺。服装华丽度随场合，脸和体态沿用确认设定。剧本要求同貌时保留所需相似度
 
 ===/<repository>/skills/infoflow-character-prompts/references/===
 appearance-library.md[CB7T]: F:提供角色造型类型、五官妆发与古装示例，并按场合收录可复用的造型细节 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:确认人设和剧情优先于造型示例。换装沿用已定面容体态，局部识别特征按角色自身左右固定。参考图条目只记录可独立选用的细节及来源
