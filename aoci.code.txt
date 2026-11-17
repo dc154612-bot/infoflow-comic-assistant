@@ -5,7 +5,7 @@
 .gitignore[FV5T]: F:排除本机宿主配置、私有制作目录与派生产物 | R:code:scripts/export_chatgpt.py | A:- | S:剧本及交接单应写入被忽略的 projects/
 AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知索引维护流程 | R:code:SKILL.md | A:- | S:制作任务按当前入口选读资料，源码索引维护独立于单剧交接
 CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
-LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
+LICENSE[SZ3T]: F:以MIT许可证授权使用、修改与分发仓库内容并声明免责 | R:- | A:- | S:-
 README.md[SU6T]: F:说明剧本制作和反推入库入口、项目资料导出及分镜校验的使用方法 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目采用九份导出资料和项目指令，更新仓库后替换对应资料。反推回复只输出完整提示词，只读时说明待写回
 SKILL.md[AW9T]: F:按本轮目标路由剧本拆解、人物定妆、图片反推、分镜与开头，并从本剧确认稿续作 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只给剧本时交付每个角色的一份完整版。已进入反推时连续发图和继续沿用反推，其余制作流程继续才进入下一步
 
