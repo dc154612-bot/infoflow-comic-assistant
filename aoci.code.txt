@@ -7,7 +7,7 @@ AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知�
 CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
 LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
 README.md[SU6T]: F:说明默认交付人物提示词、剧本制作和反推入库入口、项目资料导出及分镜校验 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目使用导出的 Markdown，仓库变更后在项目设置中更新资料。只读项目的反推结果交付待合并元素
-SKILL.md[AW9T]: F:按本轮制作目标路由剧本拆解、人物定妆、造型反推、分镜和开头，并从确认稿续作 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只给剧本时内部拆解并为每个角色交付一份完整版。看图反推或要求提炼入库走人物技能的反推入口。续做只进入下一步
+SKILL.md[AW9T]: F:按本轮目标路由剧本拆解、人物定妆、图片反推、分镜与开头，并从本剧确认稿续作 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只给剧本时交付每个角色的一份完整版。已进入反推时连续发图和继续沿用反推，其余制作流程继续才进入下一步
 
 ===/<repository>/scripts/===
 check_shots.py[TQ8S]: F:解析分镜文本并按正文、开头和补镜检查镜数、整数时间、字段、编号与音频 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:正文按组2至4镜，一秒尾组一镜。提供前五秒原文时检查五秒切点和对应音频。补镜旧稿支持小数输入并按向上取整的镜长检查新稿
@@ -17,7 +17,7 @@ export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT
 shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的造型继承、七字段、音频、整数时间、动作与口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:内部按本剧场次匹配确认造型，成品用原字段。合镜保留音频归属和五秒切点，补镜固定一镜
 
 ===/<repository>/skills/infoflow-character-prompts/===
-SKILL.md[DB8T]: F:为真人短剧生成角色完整版定妆和三视图，并从参考图反推中文造型提示词及提炼可复用元素 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:新造型按剧情选用库内细节，已确认人设优先。反推只写回可复用增量及来源；只读时交付待合并行
+SKILL.md[DB8S]: F:按剧本写人物完整版和生成三视图，或从单张参考图提取造型提示词并向美型库写入新元素 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:反推回复只给完整中文提示词。去重、增量入库及来源核对在内部完成，重复无增量保持原文。只读或写入失败时说明待写回
 
 ===/<repository>/skills/infoflow-character-prompts/references/===
 appearance-library.md[CB7T]: F:提供角色造型类型、五官妆发与古装示例，并按场合收录可复用的造型细节 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:确认人设和剧情优先于造型示例。换装沿用已定面容体态，局部识别特征按角色自身左右固定。参考图条目只记录可独立选用的细节及来源
