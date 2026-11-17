@@ -34,8 +34,9 @@ Codex 的仓库入口是 [AGENTS.md](AGENTS.md)，Claude Code 从 [CLAUDE.md](CL
 | --- | --- | --- |
 | 剧本拆解 | [剧本拆解](skills/infoflow-script-breakdown/SKILL.md) | 正文、配音原文及配音时间 |
 | 人物提示词与三视图 | [人物提示词](skills/infoflow-character-prompts/SKILL.md) | 当前剧本、确认的角色设定。三视图使用角色完整版，要求出图时调用可用的生图工具 |
-| 正文与补镜 | [分镜提示词](skills/infoflow-storyboard-prompts/SKILL.md) | 剧本、真实配音时间。补镜需要原镜及相邻镜头 |
-| 八个开头 | [八个开头](skills/infoflow-eight-openings/SKILL.md) | 真实前五秒音频文案、正文五秒后的起镜 |
+| 反推穿搭妆发 | [人物提示词](skills/infoflow-character-prompts/SKILL.md)中的反推入口 | 参考图及已有提示词。可写时更新美型库，只读时交付待合并的条目 |
+| 正文与补镜 | [分镜提示词](skills/infoflow-storyboard-prompts/SKILL.md) | 剧本、真实配音时间及已有的人物定妆。补镜需要原镜及相邻镜头 |
+| 八个开头 | [八个开头](skills/infoflow-eight-openings/SKILL.md) | 真实前五秒音频文案、正文五秒后的起镜及已有的人物定妆 |
 
 长期规则写在技能文件里。单部剧用[交接单](templates/project-brief.md)记录已确认的人物、剧本版本、音频、分镜和下一步。可把私有生产资料放在本地 `projects/`。
 

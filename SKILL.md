@@ -1,6 +1,6 @@
 ---
 name: infoflow-comic-assistant
-description: 信息流短剧和漫剧生产入口。新会话、切换剧本、交接续做，或收到剧本拆解、人物提示词、三视图、正文分镜、八个开头及补镜任务时使用。
+description: 信息流短剧和漫剧生产入口。新会话、切换剧本、交接续做，或收到剧本拆解、人物提示词、造型反推、三视图、正文分镜、八个开头及补镜任务时使用。
 ---
 
 # 信息流漫剧助手
@@ -19,6 +19,7 @@ description: 信息流短剧和漫剧生产入口。新会话、切换剧本、�
 | 剧本拆解、整理出场人物和剧情节点 | [剧本拆解](skills/infoflow-script-breakdown/SKILL.md) |
 | 只总结剧本 | 用一到三句交代题材、核心冲突和主要人物。直接使用当前剧本 |
 | 人物提示词、角色定妆、人物三视图或单角色重做 | [人物提示词](skills/infoflow-character-prompts/SKILL.md) |
+| 从图片反推穿搭、妆发和配饰，或将图片与已有提示词提炼入美型库 | [人物提示词](skills/infoflow-character-prompts/SKILL.md)中的「反推穿搭妆发与更新美型库」 |
 | 正文分镜、按配音分镜、做某组或补某一镜 | [分镜提示词](skills/infoflow-storyboard-prompts/SKILL.md) |
 | 基于真实前五秒文案生成八套镜头开头 | [八个开头](skills/infoflow-eight-openings/SKILL.md) |
 
