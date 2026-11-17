@@ -28,13 +28,13 @@ Codex 的仓库入口是 [AGENTS.md](AGENTS.md)，Claude Code 从 [CLAUDE.md](CL
 
 项目内的其他聊天仍可能成为上下文。每部剧独立开项目更容易隔离聊天，或者在同一项目里按剧本分别开会话，每次明确给出文件版本。GitHub 上修改规则后，重新导出并在 ChatGPT 项目内替换相应资料。
 
-## 四条制作入口
+## 制作入口
 
 | 任务 | 文件 | 使用的资料 |
 | --- | --- | --- |
 | 剧本拆解 | [剧本拆解](skills/infoflow-script-breakdown/SKILL.md) | 正文、配音原文及配音时间 |
 | 人物提示词与三视图 | [人物提示词](skills/infoflow-character-prompts/SKILL.md) | 当前剧本、确认的角色设定。三视图使用角色完整版，要求出图时调用可用的生图工具 |
-| 反推穿搭妆发 | [人物提示词](skills/infoflow-character-prompts/SKILL.md)中的反推入口 | 参考图及已有提示词。可写时更新美型库，只读时交付待合并的条目 |
+| 反推穿搭妆发 | [人物提示词](skills/infoflow-character-prompts/SKILL.md)中的反推入口 | 参考图及已有提示词。默认只输出完整提示词，内部更新美型库。只读时标明待写回 |
 | 正文与补镜 | [分镜提示词](skills/infoflow-storyboard-prompts/SKILL.md) | 剧本、真实配音时间及已有的人物定妆。补镜需要原镜及相邻镜头 |
 | 八个开头 | [八个开头](skills/infoflow-eight-openings/SKILL.md) | 真实前五秒音频文案、正文五秒后的起镜及已有的人物定妆 |
 
