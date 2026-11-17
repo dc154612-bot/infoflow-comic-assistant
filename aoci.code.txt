@@ -17,11 +17,11 @@ export_chatgpt.py[OU7T]: F:将四条制作技能与共用规则导出为 ChatGPT
 shot-rules.md[SB9T]: F:约定正文、开头、补镜共用的七字段、音频保真、镜头语言及口型规则 | R:code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:scripts/check_shots.py | A:- | S:只有本轮明确要求场景时才在时间字段后追加；明确同时动作与说话的原文允许同镜
 
 ===/<repository>/skills/infoflow-character-prompts/===
-SKILL.md[DB8T]: F:按真人主演选角与时装棚拍质感生成定妆提示词，并处理换装和三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:质感参考图提供呈现标准，确认的角色图锁定身份；妆发与服装按角色年龄和场合调整，已定骨相与体态贯穿各版
+SKILL.md[DB8T]: F:按真人主演选角与时装棚拍质感生成定妆提示词，并处理换装和三视图 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/references/appearance-library.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:核心角色逐套落实可辨剪裁、材质层次及近景工艺。服装华丽度随场合，脸和体态沿用确认设定。精简提示词保留这些具体特征
 
 ===/<repository>/skills/infoflow-character-prompts/references/===
-appearance-library.md[CB7S]: F:规定真人男女角定妆的五官、妆发、打光、选型和全身造型，并给出分场合换装参考 | R:code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:居家、礼服及狼狈状态复用同一人的脸和身形，保留长辈真实年龄感；发饰、开衩和局部妆效按人物自身左右跨角度对齐
-three-views.md[CB5T]: F:规定头肩定妆特写与正侧背全身同图的白底拍摄模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:发饰和耳饰按角色自身左右固定，衣服结构跨角度一致；版式采用模板而非旧稿取景
+appearance-library.md[CB7S]: F:给出真人主演的五官、妆发、服装设计和分场合定妆示例 | R:code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-character-prompts/references/three-views.md | A:- | S:便服维持主演级造型，礼服和礼仪造型用版型及工艺提高华丽度。换装复用已定面容和体态，局部妆效与固定配件跨角度对齐
+three-views.md[CB5T]: F:规定头肩定妆特写与正侧背全身同图的白底拍摄模板 | R:code:skills/infoflow-character-prompts/SKILL.md | A:- | S:以侧前柔光和补光保留脸部骨相及服装明暗。各视角沿用演员身份、配饰位置和服装结构，采用固定构图
 
 ===/<repository>/skills/infoflow-eight-openings/===
 SKILL.md[DB8T]: F:从同一段前五秒配音生成八套有首帧差异且接回正文的镜头方案 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:只有五秒区间端点时可提待对齐的内部切镜建议，八套逐字保留配音；仅在获准补切点或完整流程中才能修正文组一
