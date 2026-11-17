@@ -6,8 +6,8 @@
 AGENTS.md[SW7S]: F:把新制作会话引到技能路由，并定义仓库认知索引维护流程 | R:code:SKILL.md | A:- | S:制作任务按当前入口选读资料，源码索引维护独立于单剧交接
 CLAUDE.md[EW4T]: F:为 Claude Code 引入仓库共享指令 | R:code:AGENTS.md | A:- | S:-
 LICENSE[SZ3T]: F:声明仓库文件的使用和分发由权利人授权 | R:- | A:- | S:-
-README.md[SU6T]: F:说明从正文和配音进入四条制作技能，以及 ChatGPT 项目部署和分镜校验的使用方法 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目从导出的 Markdown 取规则，仓库变更后需要在项目设置里更新资料
-SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:同时提供正文和配音时间且未点名任务时先拆解，续做默认只进入下一步；本轮例外不会自动带入新剧
+README.md[SU6T]: F:说明默认从剧本和配音时长交付人物提示词，并介绍四条制作技能、ChatGPT 项目部署和分镜校验 | R:code:SKILL.md,code:scripts/export_chatgpt.py,code:scripts/check_shots.py,code:templates/project-brief.md | A:- | S:ChatGPT 项目从导出的 Markdown 取规则，仓库变更后需要在项目设置里更新资料
+SKILL.md[AW9T]: F:按本轮制作目标切换剧本拆解、人物、分镜和开头技能，并从确认稿延续指定剧集 | R:code:skills/infoflow-script-breakdown/SKILL.md,code:skills/infoflow-character-prompts/SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md,code:templates/project-brief.md | A:- | S:只提供剧本与配音时长时在内部拆解并直接交付人物提示词。点名角色时限定范围，明确索要拆解时才交付。续做默认只进入下一步
 
 ===/<repository>/scripts/===
 check_shots.py[TQ8S]: F:解析镜头文本，校验字段、时序、编号、景别和音频原文 | R:code:shared/shot-rules.md,code:skills/infoflow-storyboard-prompts/SKILL.md,code:skills/infoflow-eight-openings/SKILL.md | A:parse,validate,main | S:正文不足三秒的分组允许一镜起步，仍须满足整数秒、连续时段和实际终点；只有提供音频原文才检查逐字保真
@@ -33,4 +33,4 @@ SKILL.md[DB8T]: F:按配音时间把剧情节点转成连续分组镜头，支�
 project-brief.md[SW5T]: F:记录单剧续作使用的确认稿、拆解、配音、分镜范围及正在等待的资料 | R:code:SKILL.md,code:skills/infoflow-script-breakdown/SKILL.md | A:- | S:-
 
 ===/<repository>/skills/infoflow-script-breakdown/===
-SKILL.md[DB7T]: F:将当前正文和配音拆为出场人物、按故事顺序的剧情节点及必须保留的动作道具 | R:code:SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:没有细分时间点时按剧情顺序标注待对齐，不把总时长推成真实分界；音频以确认后的配音稿为准
+SKILL.md[DB7T]: F:将当前正文和配音拆为出场人物、按故事顺序的剧情节点及必须保留的动作道具 | R:code:SKILL.md,code:skills/infoflow-storyboard-prompts/SKILL.md | A:- | S:默认制作流程只在内部使用拆解，明确索要时按格式交付。没有细分时间点时按剧情顺序标注待对齐，音频以确认后的配音稿为准

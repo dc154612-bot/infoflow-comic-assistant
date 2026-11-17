@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-17T08:41:32Z",
-  "updated_at": "2026-11-17T10:20:04Z",
+  "updated_at": "2026-11-17T10:31:32Z",
   "files": {
     ".gitattributes": {
       "role": "index",
@@ -35,21 +35,21 @@
     },
     "README.md": {
       "role": "index",
-      "sha256": "68e14c6bbe04fb4e1245166a927bfb3f2d81e62f6554246ef5ddfbb5393556af",
-      "size": 4158,
-      "normalized_sha256": "68e14c6bbe04fb4e1245166a927bfb3f2d81e62f6554246ef5ddfbb5393556af"
+      "sha256": "59d05d67f66b60d283aa27a4d99c39b405dbb778909439a2f3e841573ff0edfb",
+      "size": 4212,
+      "normalized_sha256": "59d05d67f66b60d283aa27a4d99c39b405dbb778909439a2f3e841573ff0edfb"
     },
     "SKILL.md": {
       "role": "index",
-      "sha256": "64c1ced2baf62f3ca8315f4e770f2634a44995d0e65de3eebb3a1040d8d03056",
-      "size": 3010,
-      "normalized_sha256": "64c1ced2baf62f3ca8315f4e770f2634a44995d0e65de3eebb3a1040d8d03056"
+      "sha256": "10da5d980435670604a8488ae0e2aa61cc504447401fb6d63e8d185cf5ef5dcf",
+      "size": 3214,
+      "normalized_sha256": "10da5d980435670604a8488ae0e2aa61cc504447401fb6d63e8d185cf5ef5dcf"
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "1db60d2508a59a9640106c51d18a77c77f337f98f32fca4f791f5c3584ec31d1",
-      "size": 5478,
-      "normalized_sha256": "1db60d2508a59a9640106c51d18a77c77f337f98f32fca4f791f5c3584ec31d1"
+      "sha256": "cb2925934cbc13182d671c55c3dc39084309094bac329062689104300989dd16",
+      "size": 5576,
+      "normalized_sha256": "cb2925934cbc13182d671c55c3dc39084309094bac329062689104300989dd16"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -107,9 +107,9 @@
     },
     "skills/infoflow-script-breakdown/SKILL.md": {
       "role": "index",
-      "sha256": "57ae1914636c2eae9a4c07461cf14cec9d7e4ffab76b6fd7707327bba9d99e95",
-      "size": 1462,
-      "normalized_sha256": "57ae1914636c2eae9a4c07461cf14cec9d7e4ffab76b6fd7707327bba9d99e95"
+      "sha256": "74c7a6806417dbf9f6d634d8476a6d88fc83e4e569bcbff51f216b88218dceed",
+      "size": 1453,
+      "normalized_sha256": "74c7a6806417dbf9f6d634d8476a6d88fc83e4e569bcbff51f216b88218dceed"
     },
     "skills/infoflow-storyboard-prompts/SKILL.md": {
       "role": "index",
@@ -125,9 +125,9 @@
     },
     "tests/behavior-cases.md": {
       "role": "observe",
-      "sha256": "3bfcd1f872b8b5a194c0fbd5e882a0903e4fed2a7e51ad71127242db512bca42",
-      "size": 3949,
-      "normalized_sha256": "3bfcd1f872b8b5a194c0fbd5e882a0903e4fed2a7e51ad71127242db512bca42"
+      "sha256": "5abeb7ba6a50e87331c143c0a7650b2e95af767e39a95c2ef0392638c10f0636",
+      "size": 4101,
+      "normalized_sha256": "5abeb7ba6a50e87331c143c0a7650b2e95af767e39a95c2ef0392638c10f0636"
     },
     "tests/test_bundle.py": {
       "role": "observe",
