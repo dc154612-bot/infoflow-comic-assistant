@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-17T08:41:32Z",
-  "updated_at": "2026-11-17T10:43:21Z",
+  "updated_at": "2026-11-17T14:15:16Z",
   "files": {
     ".gitattributes": {
       "role": "index",
@@ -47,9 +47,9 @@
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "6dea6a21d19d19b888767af053a4983ea6dfe05b9264949509b6d25c67b69355",
-      "size": 5591,
-      "normalized_sha256": "6dea6a21d19d19b888767af053a4983ea6dfe05b9264949509b6d25c67b69355"
+      "sha256": "4d60af7d06ffa6c30f340ed53966ddd118aebc34450532fd1f5c2b2f3a09f585",
+      "size": 5627,
+      "normalized_sha256": "4d60af7d06ffa6c30f340ed53966ddd118aebc34450532fd1f5c2b2f3a09f585"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -83,15 +83,15 @@
     },
     "skills/infoflow-character-prompts/SKILL.md": {
       "role": "index",
-      "sha256": "7ec3e72999fc1a5b8fd8e14c3b4669b257952e2c1431c3467f8eb905d9a5951f",
-      "size": 7069,
-      "normalized_sha256": "7ec3e72999fc1a5b8fd8e14c3b4669b257952e2c1431c3467f8eb905d9a5951f"
+      "sha256": "bafbe10a72eae19527c0796ca4b9a9846b1679bb5cfec132fd4ea16cf9a51686",
+      "size": 7197,
+      "normalized_sha256": "bafbe10a72eae19527c0796ca4b9a9846b1679bb5cfec132fd4ea16cf9a51686"
     },
     "skills/infoflow-character-prompts/references/appearance-library.md": {
       "role": "index",
-      "sha256": "7b7843cc93d953be694b1d7981e5e78d01bcaa13f62dfa5bf7619f0deb1781c1",
-      "size": 19079,
-      "normalized_sha256": "7b7843cc93d953be694b1d7981e5e78d01bcaa13f62dfa5bf7619f0deb1781c1"
+      "sha256": "a8a83aab737e24fb5a4b4eb3352ee4ac577815a87d55502e4a50d65a4bbe23ab",
+      "size": 17477,
+      "normalized_sha256": "a8a83aab737e24fb5a4b4eb3352ee4ac577815a87d55502e4a50d65a4bbe23ab"
     },
     "skills/infoflow-character-prompts/references/three-views.md": {
       "role": "index",
@@ -125,9 +125,9 @@
     },
     "tests/behavior-cases.md": {
       "role": "observe",
-      "sha256": "52789b61a50fb5a3b2044e4b3e0d0f5737eb48b5a425bef63ce08afd13d009d1",
-      "size": 4382,
-      "normalized_sha256": "52789b61a50fb5a3b2044e4b3e0d0f5737eb48b5a425bef63ce08afd13d009d1"
+      "sha256": "063f0168ca92fe20efa89d4b3109d7adb9afd6a58a5ab7bc5118a210cf445873",
+      "size": 4764,
+      "normalized_sha256": "063f0168ca92fe20efa89d4b3109d7adb9afd6a58a5ab7bc5118a210cf445873"
     },
     "tests/test_bundle.py": {
       "role": "observe",
